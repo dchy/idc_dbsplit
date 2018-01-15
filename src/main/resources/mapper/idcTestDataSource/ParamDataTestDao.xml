@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="hyby.td.dao.idcTestDataSource.ParamDataTestDao">
+    <insert id="insertParamData" parameterType="hyby.td.bean.ParamData">
+        INSERT INTO td_dbsplit_param(param,createTime,receiverID,retryCount,status,receiverResponse,updateTime)
+        VALUES(#{paramData.param},#{paramData.createTime},#{paramData.receiverID},#{paramData.retryCount},#{paramData.status},#{paramData.receiverResponse},#{paramData.updateTime})
+    </insert>
+    <update id="updateParam">
+        UPDATE td_dbsplit_param
+        SET retryCount = #{retryCount} , status = #{status} , receiverResponse = #{receiverResponse} , updateTime = #{updateTime}
+        where
+         id = #{id}
+    </update>
+
+    <select id="selectParamName" resultType="hyby.td.bean.ParamURI">
+        SELECT paramProvider,receiverUrl,paramReceiver,receiverID,paramName
+        from td_dbsplit_receiver
+        WHERE receiverID=#{receiverID}
+    </select>
+
+    <select id="selectParamData" resultType="hyby.td.bean.ParamData">
+        SELECT id ,receiverID,param,createTime,retryCount,status,receiverResponse,updateTime
+        FROM td_dbsplit_param
+        where
+        id = #{id}
+    </select>
+
+    <select id="selectParamDataNo" resultType="hyby.td.bean.ParamData">
+        SELECT id ,receiverID,param,createTime,retryCount,status,receiverResponse,updateTime
+        FROM td_dbsplit_param
+        where status = #{status}
+    </select>
+    <select id="selectParamID" resultType="java.lang.Integer">
+        SELECT id
+        FROM td_dbsplit_param
+        where createTime = #{createTime}
+    </select>
+    <select id="selectParamDataAll" resultType="hyby.td.bean.ParamDataAll">
+        SELECT u.paramProvider,u.paramReceiver,u.receiverUrl,u.receiverID,p.createTime,p.updateTime,p.id,p.param ,p.retryCount,p.status,p.receiverResponse,u.paramName
+        FROM td_dbsplit_receiver u
+        LEFT JOIN td_dbsplit_param p ON u.receiverID = p.receiverID
+            <if test="status>=0">
+                <where>
+                  p.status = #{status}
+                </where>
+            </if>
+
+    </select>
+    <select id="selectParamDataOne" resultType="hyby.td.bean.ParamDataAll">
+        SELECT u.paramProvider,u.paramReceiver,u.receiverUrl,u.receiverID,p.createTime,p.updateTime,p.id,p.param ,p.retryCount,p.status,p.receiverResponse,u.paramName
+        FROM td_dbsplit_receiver u
+        LEFT JOIN td_dbsplit_param p ON u.receiverID = p.receiverID
+        where p.id = #{id}
+    </select>
+</mapper>

@@ -1,0 +1,129 @@
+@charset "utf-8";
+.fz12{ font-size: 12px;}
+.c999999{ color: #999999;}   /**标题字体颜色**/
+.c666666{ color: #666666;}  /**数据字体颜色**/
+.Data_baseMainTitle .uiTab4 li{ min-width: 70px; text-align: center;}
+.Data_baseMainTitle .uiTab4 li a{ padding: 0px 10px; font-size: 12px;}
+.Data_baseMainTopUl li{ width: 20%; height: 35px; line-height: 35px; float: left;}
+.Data_baseMainBottom{ height: 190px; overflow: hidden; border-top: 1px dotted #ccc;}
+.Data_baseMK{ width: 49%; height: 210px; border: 1px dashed #ccc; float: left; margin-bottom: 10px;}
+.Data_baseMainTopUlK{ width: 49%;}
+.Data_baseMainTopUlK .Data_baseMainTopUl li{ width: 33.3%;}
+.Data_baseMainTopUlK .Data_baseMK { width: 100%;}
+.Data_baseImg{ width: 58px; height: 29px; overflow: hidden;}
+.Data_baseImg img{ width: 100%; height: 100%; margin-top: 3px;}
+.Data_baseMIMg{ width: 50%; height: 180px;}
+/**轮播图**/
+#slide3{width: 500px;margin: 0 auto;}
+#slide3 .scrollBtn{top:55px;}
+#slide3 .Prev{left:-40px;}
+#slide3 .Next{right:-40px;}
+#slide3 .scroll-text{width: 100%;height: 135px;overflow: hidden;}
+#slide3 .scrollUl li{position:relative;width: 230px;height: 130px;float: left;margin: 0 10px;display: inline;border: 1px solid #ddd;border-radius: 2px;cursor: pointer;}
+#slide3 .scrollUl li img{display: block;width: 100%;height: 100%;}
+#slide .upload_finish_div,#slide3 .upload_finish_div{display: block;}
+/*图片左右滚动*/
+.scrollBtn{position: absolute;width:30px;height: 30px;overflow: hidden;background: url(../images/pic/upload_ico.png) no-repeat;}
+.uploadPrev,.uploadNext{top:96px;}
+.uploadPrev,.Prev{background-position: 0 0;}
+.uploadPrev:hover,.Prev:hover{background-position: 0 -60px;}
+.uploadNext,.Next{background-position: 0 -30px;}
+.uploadNext:hover,.Next:hover{background-position: 0 -90px;}
+
+.Data_baseFile{ width: 100px; text-align: center;}
+.Data_baseFile img{ width: 85px; height: 80px; display: inline-block;}
+.Data_baseFileBtn input{ margin-top: 74px; margin-left: 30px;}
+
+
+/**table列表样式**/
+.table-wrapper .uiTable{ border: none;}
+.table-wrapper .uiTable th{ text-align: left;}
+.table-wrapper .uiTable td{ text-align: left; border: none;}
+.table-wrapper .uiTable td.Uimoney_th,.table-wrapper .uiTable th.Uimoney_th{ text-align: right;}
+
+
+
+
+/***2.0****/
+.c333333{ color: #333333;line-height: 28px;white-space:nowrap;}
+.pa15{ padding: 15px;}
+.data-mainK-titCen{ padding: 8px 15px;}
+.ui-main-dataL{ width: 44px; border-right: 1px solid #e0e3ea;}
+.ui-main-dataR{ margin-left: 44px;}
+.ui-main-dataRTop{ height: 45px; border-bottom: 2px solid #dddddd;}
+.ui-main-dataRTop ul { height: 45px; padding-top: 13px;overflow: hidden;font-size: 14px;color: #666;}
+.ui-main-dataRTop li {height: 20px;line-height: 20px;border-right: 1px solid #ccc;cursor: pointer;float: left;  position: relative;}
+.ui-main-dataRTop li a {padding: 0 30px; display: inline-block; color: #888888;}
+.ui-main-dataRTop .border-rNone {border-right: none;}
+
+.dataRTop-SWicon01{ width: 16px; height: 15px; float: left; margin-top: 2px; margin-right: 7px; background: url(../images/pic/data_icon.png) no-repeat; display: inline-block;}
+.dataRTop-SWicon02{ width: 14px; height: 14px; float: left; margin-top: 4px; margin-right: 7px; background: url(../images/pic/data_icon02.png) no-repeat; display: inline-block;}
+.dataRTop-SWicon03{ width: 16px; height: 13px; float: left; margin-top: 4px; margin-right: 7px; background: url(../images/pic/data_icon03.png) no-repeat; display: inline-block;}
+.dataRTop-SWicon04{ width: 15px; height: 12px; float: left; margin-top: 4px; margin-right: 7px; background: url(../images/pic/data_icon04.png) no-repeat; display: inline-block;}
+.dataRTop-SWicon05{ width: 14px; height: 14px; float: left; margin-top: 2px; margin-right: 7px; background: url(../images/pic/data_icon05.png) no-repeat; display: inline-block;}
+.dataRTop-SWicon06{ width: 16px; height: 15px; float: left; margin-top: 2px; margin-right: 7px; background: url(../images/pic/data_icon06.png) no-repeat; display: inline-block;}
+
+.ui-main-dataRTop .ui-dataR-cur a{ color: #000000;}
+.ui-main-dataRTop .clearf-box{width:5px;height: 5px;position:absolute;left: 0;right: 0;margin: auto;
+                             border-left: 5px solid transparent; border-right: 5px solid transparent;border-bottom: 5px solid #0099ff;}
+.ui-dataR-cur .dataRTop-SWicon01{ background: url(../images/pic/data_cur_icon01.png) no-repeat;}
+.ui-dataR-cur .dataRTop-SWicon02{ background: url(../images/pic/data_cur_icon02.png) no-repeat;}
+.ui-dataR-cur .dataRTop-SWicon03{ background: url(../images/pic/data_cur_icon03.png) no-repeat;}
+.ui-dataR-cur .dataRTop-SWicon04{ background: url(../images/pic/data_cur_icon04.png) no-repeat;}
+.ui-dataR-cur .dataRTop-SWicon05{ background: url(../images/pic/data_cur_icon05.png) no-repeat;}
+.ui-dataR-cur .dataRTop-SWicon06{ background: url(../images/pic/data_cur_icon06.png) no-repeat;}
+
+.dataRTop-curIcon{ display: none; width: 18px; height: 8px; background: url(../images/pic/dataRTop-curIcon.png) no-repeat; position: absolute; bottom: -12px; left: 50px;}
+/**左侧  菜单**/
+.ui-data-basic{ width: 44px; height: 45px; padding-top: 9px; text-align: center; background-color: #bbbbbb;  color: #fff; cursor: pointer;}
+.ui-main-dataL .ui-data-basic-cur{ background-color: #0099ff; color: #fff;}
+.ui-data-basic p{ line-height: 15px;}
+.basic-icon{ width: 14px; height: 14px; background: url(../images/pic/basic-icon.png) no-repeat; display: inline-block;}
+.ui-data-basicUl li{ min-width: 44px; min-height: 97px; display: table; cursor: pointer;}
+.ui-data-basicUl li .basicUl-div{ display: table-cell; vertical-align: middle; width: 30px; border-bottom: 1px solid #e0e3ea; text-align: center; height: 97px;}
+.basicUl-cur{ background-color: #0099ff;}
+.ui-data-basicUl li.basicUl-cur .basicUl-div{ border-color: #0099ff;}
+.basicUl-cur a{ color: #fff;}
+.basicUl01{ width: 18px; height: 18px; background: url(../images/pic/basicUl_01.png) no-repeat; display: inline-block;}
+.basicUl02{ width: 23px; height: 17px; background: url(../images/pic/basicUl_02.png) no-repeat; display: inline-block;}
+.basicUl03{ width: 21px; height: 20px; background: url(../images/pic/basicUl_03.png) no-repeat; display: inline-block;}
+.basicUl04{ width: 18px; height: 14px; background: url(../images/pic/basicUl_04.png) no-repeat; display: inline-block;}
+.basicUl-cur .basicUl01{ background: url(../images/pic/basicUl_cur01.png) no-repeat;}
+.basicUl-cur .basicUl02{ background: url(../images/pic/basicUl_cur02.png) no-repeat;}
+.basicUl-cur .basicUl03{ background: url(../images/pic/basicUl_cur03.png) no-repeat;}
+.basicUl-cur .basicUl04{ background: url(../images/pic/basicUl_cur04.png) no-repeat;}
+/**中间 右侧**/
+.ui-main-dataRBottomR{ width: 287px; border-right: 1px solid #e0e3ea; position: absolute; top: 0px; right: 10px;}
+.ui-main-dataRBottomL{ margin-right: 296px; border-right: 1px solid #e0e3ea;}
+.ui-dataRBottomR-tit li{ /*min-width: 58px;*/ height: 35px; line-height: 35px; float: left; border-left: 1px solid #e0e3ea;border-bottom: 1px solid #e0e3ea; margin-right: -1px; border-top: 0px; text-align: center; background-color: #fafafa; cursor: pointer;}
+.ui-dataRBottomR-tit-li-five{
+    min-width: 58px;
+}
+.ui-dataRBottomR-tit-li-four{
+    min-width: 72px;
+}
+.ui-dataRBottomR-tit-li-three{
+    min-width: 96px;
+}
+.ui-dataRBottomR-tit-li-two{
+    min-width: 144px;
+}
+.ui-dataRBottomR-tit-li-one{
+    min-width: 287px;
+}
+.ui-dataRBottomR-tit em{ width: 20px; height: 20px; line-height: 20px; border: 1px solid #989898; border-radius: 100%; display: inline-block;}
+.ui-dataRBottomR-tit .data-titCur{ border-bottom: 2px solid #fff; background-color: #fff;}
+.ui-dataRBottomR-tit .data-titCur em{ border-color: #069bff;  color: #069bff;}
+.ui-dataRBottomR-tit .ui-data-last{ border-right: 0px;}
+/**中间   左侧**/
+.dataRBottomL-tit{ overflow: hidden;}
+.dataRBottomL-tit li{ width: 20%; height: 36px; line-height: 36px; float: left; text-align: center; background-color: #f5f5f5;}
+.dataRBottomL-tit a{ width: 100%; height: 100%; font-weight: 800; display: inline-block; border-right: 1px solid #dddddd; border-bottom: 1px solid #dddddd;}
+.dataRBottomL-tit .dataRBL-titCur{ background-color: #fff;}
+.dataRBottomL-tit .dataRBL-titCur a{ color: #0099ff; border-bottom: 0px;}
+.dataRBottomL-tit .ui-data-last a{ border-right: 0px;}
+.dataRBottomL-mainK{ border: 1px solid #e0e3ea; overflow: hidden; margin-top: 14px;}
+.data-mainK-tit{ height: 28px; line-height: 28px; font-size: 13px; background-color: #fafafa; padding: 0px 10px; border-bottom: 1px solid #e0e3ea;}
+.data-mainK-titCen p{ width: 20%; float: left;}
+.widthB40{ width: 40%;}
+.margin-top0{ margin-top: 14px;}

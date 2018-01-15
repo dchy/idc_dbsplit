@@ -1,0 +1,218 @@
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>参数数据展示</title>
+    <script src="proj/js/jquery-1.11.3.min.js"></script>
+    <link rel="stylesheet" href="proj/css/DataBaseStyle.css" />
+    <link rel="stylesheet" href="proj/css/rxui1.0.2.min.css" />
+
+    <style type="text/css">
+        h3{
+            margin-left: 47%;
+            color: red;
+        }
+        .truncated{
+            white-space: nowrap;
+            overflow:hidden ;
+            text-overflow:ellipsis;
+            display: inline-block;
+            line-height: 37px;
+        }
+        .addColor{color: #60cd64;}
+        .addredColor{color:red;}
+        .showarea{width:80%;margin: 60px auto;}
+        .showarea table{width:100%;}
+    </style>
+
+</head>
+<body class="ml10">
+<div class="firstDivClass">
+
+    <div class="pa10 clearfix">
+        <div style="float: left">
+            <h1>数据库拆分</h1>
+        </div>
+        <div class="fr">
+
+            <select class="fl mr5 cursor" id="selectChange" >
+                <option value="-1">请选择数据状态</option>
+                <option value="0">失败</option>
+                <option value="1">成功</option>
+            </select>
+            <input id="searchID" type="button" onclick="distribute()"  value="搜索" class="uiBtn-normal uiBtn-blue">
+        </div>
+    </div>
+    <div class="tableClass">
+        <div style="padding-right: 10px;">
+            <table class="uiTable">
+                <thead class="THeader1">
+                <tr>
+                    <th width="15%" data-order="0">
+                        <div class="thSortBox">
+                            <span>唯一键</span>
+                        </div>
+                    </th>
+                    <th width=55%" data-order="0">
+                        <div class="thSortBox">
+                            <span>应用方提供的业务接口</span>
+                        </div>
+                    </th>
+                    <th width="15%" data-order="0">
+                        <div class="thSortBox">
+                            <span>参数创建时间</span>
+                        </div>
+                    </th>
+                    <th width="15%" data-order="0">
+                        <div class="thSortBox">
+                            <span>推送状态</span>
+                        </div>
+                    </th>
+                </thead>
+            </table>
+            <div class="list-TableScro">
+                <table class="uiTable list-TableScroTbody">
+                    <tbody class="showProject">
+                    <!-- ko foreach : paramDatas -->
+                    <tr onclick="paramOne(this)">
+                        <td width="15%" data-bind="text:id" ></td>
+                        <td width="55%" data-bind="text:applicationUrl"></td>
+                        <td width="15%" data-bind="text:createTime" ></td>
+                        <td width="15%" data-bind="text:changeStatus(status)" ></td>
+                    </tr>
+                    <!-- /ko -->
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+    <div class="addarea" style="margin: 0 auto;text-align: center;padding-right: 10px;" data-bind="with:paramData">
+        <div class="form-group" style="margin-top: 8px;">
+            <h1>参数数据展示</h1>
+        </div>
+
+        <table class="uiTable list-TableScroTbody"  style="margin-top: 10px;">
+            <tr>
+                <td>主键</td>
+                <td data-bind="text:id"></td>
+            </tr>
+            <tr>
+                <td>参数名</td>
+                <td data-bind="text:paramName"></td>
+            </tr>
+            <tr>
+                <td>参数值</td>
+                <td data-bind="text:paramData"></td>
+            </tr>
+            <tr>
+                <td>应用方提供的业务接口</td>
+                <td data-bind="text:applicationUrl"></td>
+            </tr>
+            <tr>
+                <td>参数创建时间</td>
+                <td data-bind="text:createTime"></td>
+            </tr>
+            <tr>
+                <td>参数提供方</td>
+                <td data-bind="text:sourceName"></td>
+            </tr>
+            <tr>
+                <td>参数应用方</td>
+                <td data-bind="text:applicationSide"></td>
+            </tr>
+            <tr>
+                <td>重试次数</td>
+                <td data-bind="text:retryCount"></td>
+            </tr>
+            <tr>
+                <td>推送状态</td>
+                <td data-bind="text:changeStatus(status)"></td>
+            </tr>
+        </table>
+        <div class="form-group" style="margin-top: 10px;">
+            <input id="returnButton" type="button" onclick="closeClick()"  value="返回" class="uiBtn-normal uiBtn-blue">
+        </div>
+</div>
+</div>
+</body>
+<script src="proj/knockout/dist/knockout.js"></script>
+<script src="proj/js/helper.js"></script>
+<script src="proj/js/rxuedv2.0.min.js" type="text/javascript" charset="utf-8"></script>
+<script type="text/javascript">
+
+    $(function () {
+        distribute();
+        var theight = $("body").height()-$(".navbar-inner").height()-$(".firstDivClass>div:first").height()-$(".tableClass>div>table").height()-30;
+        $(".list-TableScro").height(theight).slimScroll({
+            height: theight,
+            borderRadius: "0px"
+        });
+    });
+
+    function closeClick() {
+        $(".tableClass").show();
+        VM.paramData(undefined);
+    }
+
+    function distribute() {
+        debugger
+        var status = $("#selectChange").val();
+        $.ajax({
+            type :"GET",
+            url :"http://192.168.1.172:13215/dbsplit/show",
+            data:{status:status},
+            success :function(data){
+                debugger
+                VM.paramDatas(undefined);
+                VM.paramDatas(data);
+                //划过变色
+                rxued.table.hoverChage($(".uiTable tr"),"#EAF4FE");
+                //隔行变色
+                $("tbody tr:even").css("background","#fff");
+                $("tbody tr:odd").css("background","#F9F9F9");
+            },
+            error:function(XmlHttpRequest,textStatus, errorThrown)
+            {
+//                alert("错误1");
+            }
+        });
+    }
+
+    function paramOne(data) {
+        debugger
+        $(".tableClass").hide();
+        var id = $(data).children().eq(0).text();
+        $.ajax({
+            type :"GET",
+            url :"http://192.168.1.172:13215/dbsplit/show/one",
+            data:{id:id},
+            success :function(data){
+                debugger
+                VM.paramData(undefined);
+                VM.paramData(data);
+                //隔行变色
+                $("tbody tr:even").css("background","#fff");
+                $("tbody tr:odd").css("background","#F9F9F9");
+            },
+            error:function(XmlHttpRequest,textStatus, errorThrown)
+            {
+//                alert("错误1");
+            }
+        });
+    }
+
+
+    function changeStatus(data) {
+        var status = "";
+        if(data==1){
+            status = "成功";
+        }else if(data==0){
+            status = "失败";
+        }
+        return status;
+    }
+    
+    VM["paramDatas"]=ko.observableArray([]);
+    VM["paramData"]=ko.observable();
+</script>
+</html>

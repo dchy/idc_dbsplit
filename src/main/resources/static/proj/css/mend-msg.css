@@ -1,0 +1,62 @@
+@charset "utf-8";
+.basic-info{height: 40px;line-height: 40px;background: #ebeaea;}
+.mt4{margin-top: 4px;}
+.mt6{margin-top: 6px;}
+.hide{display: none;}
+.dis_block{ display:block;}
+.dis_il_block{ display:inline-block;}
+.dis_inline{ display:inline;}
+/*颜色*/
+.colorGreen{color:#3c6;}
+.colorRed{color: #f33;}
+.colorBlue{color:#1997ea;}
+.colorOrange{color: #f68411;}
+
+.h2-title{font-size: 14px;background: url(../images/ico/line-bg.png) no-repeat left center;padding-left: 10px;line-height: 20px;}
+.breadcrumb { background: #ebeaea; height: 40px; line-height: 40px; padding: 0 20px; position: relative;}
+/*边框线*/
+.borSolidLine{border:1px solid #c9c9c9;}
+
+.borLSolidLine{border-left:1px solid #ccc;}
+.borRSolidLine{border-right:1px solid #ccc;}
+.borTSolidLine{border-top:1px solid #ccc;}
+.borBSolidLine{border-bottom:1px solid #ccc;}
+
+.borLDashLine{border-left:1px dashed #ccc;}
+.borRDashLine{border-right:1px dashed #ccc;}
+.borTDashLine{border-top:1px dashed #ccc;}
+.borBDashLine{border-bottom:1px dashed #ccc;}
+
+.borLDottedLine{border-left:1px dotted #ccc;}
+.borRDottedLine{border-right:1px dotted #ccc;}
+.borTDottedLine{border-top:1px dotted #ccc;}
+.borBDottedLine{border-bottom:1px dotted #ccc;}
+/*文本对齐*/
+.justify_span_w60{width:60px;}
+.justify_span_w70{width:70px;}
+.justify_span_w72{width:72px;}
+.justify_span_w77{width:77px;}
+.justify_span_w90{width:90px;}
+.justify_span_w100{width:100px;}
+.justify_span_w120{width:120px;}
+.justify_span_w125{width:125px;}
+.justify_span{display:inline-block;text-align: justify;text-align-last: justify;-moz-text-align-last: justify;-webkit-text-align-last: justify;text-justify: inter-word;-ms-text-justify: inter-ideograph;}
+/*弹出层*/
+.alertMask {width: 100%;height: 100%;background: #000;opacity: .5;filter: alpha(opacity=50);position: fixed;top: 0;left: 0;display: none; z-index: 1031;}
+.alertBox {z-index: 1032;display: none;background: #fff;position: fixed;left: 50%;top:50%;}
+.alertBox .alertCon{max-height:450px;overflow:auto;overflow-x: hidden;}
+.alertBox .alertTitle {width: 100%;height: 40px;line-height:40px;background: #eeeeee;}
+.alertBox .alertTitle p {color: #fff;line-height:40px;padding-left:20px;color: #333;}
+.alertBox .close {background:url(../images/pic/alert_close.png) no-repeat;width:12px;height:12px;position: absolute;top: 14px;right: 20px;cursor: pointer;}
+.alertBox .close:hover{background-position: 0 -12px;}
+.alertFoot{text-align: center;}
+/*图片上传按钮*/
+.upload_finish_div,.upload_layout_div{display:none;position: absolute;left: 0;top: 0;width: 100%;height: 100%;overflow: hidden;}
+.upload_finish_bg,.upload_layout_bg{position: absolute;left: 0;top: 0;width: 100%;height: 100%;z-index: 4;background: #000;opacity: 0.3;filter: alpha(opacity=30);}
+.upload_finish_img{display: block;width: 100%;height: 100%;overflow: hidden;}
+.upload_finish_link,.upload_layout_link{position: absolute;left: 0;top:50%;margin:-20px 0 0;width: 100%;height: 40px;overflow: hidden;z-index: 5;text-align: center;}
+.upload_finish_bg,.upload_finish_link{display:none;}
+.upload_finish_link a,.upload_layout_link a{background: url(../images/pic/op_ico_14M.png) no-repeat;width: 40px;height: 40px; overflow: hidden;float: left;margin:0 5px;display: inline;}
+.upload_finish_link .enlarge_link,.upload_layout_link .enlarge_link{background-position: 0 0;}
+.upload_finish_link .delect_link,.upload_layout_link .delect_link{background-position: 0 -50px;}
+.upload_finish_link .modify_link,.upload_layout_link .modify_link{background-position: 0 -100px;}
